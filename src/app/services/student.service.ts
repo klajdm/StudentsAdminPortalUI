@@ -15,19 +15,13 @@ export class StudentService {
 
   constructor(private httpClient: HttpClient) { }
 
-
-
   getStudents(): Observable<Student[]> {
     return this.httpClient.get<Student[]>(this.baseApiUrl + '/students');
   }
 
-
-
   getStudent(studentId: string): Observable<Student> {
     return this.httpClient.get<Student>(this.baseApiUrl + '/students/' + studentId);
   }
-
-
 
   updateStudent(studentId: string, studentRequest: Student): Observable<Student> {
 
@@ -46,13 +40,9 @@ export class StudentService {
 
   }
 
-
-
   deleteStudent(studentId: string): Observable<Student> {
     return this.httpClient.delete<Student>(this.baseApiUrl + '/students/' + studentId);
   }
-
-
 
   addStudent(studentRequest: Student): Observable<Student> {
 
@@ -70,7 +60,6 @@ export class StudentService {
     return this.httpClient.post<Student>(this.baseApiUrl + '/students/add', addStudentRequest);
 
   }
-
 
   uploadImage(studentId: string, file: File): Observable<any> {
     const formData = new FormData();
